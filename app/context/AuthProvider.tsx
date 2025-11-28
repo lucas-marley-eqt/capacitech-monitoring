@@ -4,7 +4,7 @@ import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut, User,
 import { auth } from '../../firebase';
 
 interface AuthContextType {
-  user: User;
+  user: User | null;
   signIn: () => Promise<UserCredential>;
   logOut: () => Promise<void>;
 }
@@ -12,7 +12,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User>({});
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -37,6 +37,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useAuth() {
-  return useContext(AuthContext);
+export function useAuth(): AuthContextType {
+  const context = useContext(AuthContext)
+
+  if(!context){
+    throw new Error("useAuth must be used inside an AuthProvider");
+  }
+  return context
 }

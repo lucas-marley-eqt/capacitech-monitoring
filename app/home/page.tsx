@@ -13,7 +13,6 @@ const { user, logOut } = useAuth();
     );
   }
 
-
 return (
     <div className="min-h-screen w-full bg-neutral-900 text-white px-6 py-10">
       <header className="flex items-center gap-3 mb-12">
