@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Libraries for running the tests
 
 ### Fixed
-- AuthProvider typing error
+- Deployment error corrected by AuthProvider typing
 
 ## [0.1.0] - 2025-11-28
 
