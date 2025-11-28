@@ -1,6 +1,10 @@
+'use client'
+import { useAuth } from "../context/AuthProvider";
+
 export default function LoginPage() {
+  const { signIn } = useAuth();
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-[#0b1220] text-white px-6">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#5879bb] text-white px-6">
       <div className="flex flex-col items-center text-center">
         <h1 className="text-4xl font-bold mb-4">Pokemon Dex</h1>
 
@@ -14,7 +18,8 @@ export default function LoginPage() {
             text-white font-medium px-6 py-3 rounded-lg shadow-md
             transition
           "
-        >
+          onClick={signIn}>
+        
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/2048px-Google_%22G%22_logo.svg.png"
             alt="Google logo"
