@@ -1,7 +1,6 @@
 export default function LoginPage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-[#0b1220] text-white px-6">
-      {/* Conteúdo principal */}
       <div className="flex flex-col items-center text-center">
         <h1 className="text-4xl font-bold mb-4">Pokemon Dex</h1>
 
@@ -25,7 +24,6 @@ export default function LoginPage() {
         </button>
       </div>
 
-      {/* Rodapé */}
       <footer className="absolute bottom-10 flex flex-col items-center text-sm text-neutral-500 space-y-4">
         <div className="flex items-center gap-6">
           <a href="#" className="hover:text-neutral-300">Terms of Use</a>

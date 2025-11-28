@@ -1,15 +1,14 @@
 'use client';
-
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 
 // Tipagens
-interface PokemonAPI {
+type PokemonAPI = {
   name: string;
   url: string;
 }
 
-interface CardData {
+type CardData = {
   type: string;
   title: string;
   info: string[];
@@ -41,7 +40,6 @@ export default function PokemonCards() {
         type: "Pokemon",
         title: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
         info: [
-            // Se quiser, podemos extrair o ID da URL do pokemon
             `ID: ${pokemon.url.split('/')[6] || 'N/A'}`, 
             `Source: PokeAPI`
         ],
